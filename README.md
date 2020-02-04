@@ -1,2 +1,2 @@
 # Band-Tree
-This is a organization app for bands to keep record of set list, gigs, and notes
+This is an app for bands to keep organized records of set lists, gigs, and notes
