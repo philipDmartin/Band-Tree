@@ -45,16 +45,16 @@ export const GigProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log(gigs)
+        console.log(theGig)
         console.log("gigs app state changed")
         // if (checkedMessages.length == messages.length){
         //     console.log("time to get messages")
         // }
-    }, [gigs])
+    }, [theGig])
 
     return (
         <GigContext.Provider value={{
-            theGigs, addGig, deleteGig, updateGig
+            theGig, addGig, deleteGig, updateGig
         }}>
             {props.children}
         </GigContext.Provider>

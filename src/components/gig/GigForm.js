@@ -1,15 +1,15 @@
 import React, { useContext, useRef } from "react"
 import { useState, useEffect } from "react"
 import { GigContext } from "./GigProvider"
-import { UserContext } from "../user/UserProvider"
+import { UserContext } from "../users/UserProvider"
 import "./Gigs.css"
 
 export default props => {
-    const { user } = useContext(UserContext)
+    const { theUser } = useContext(UserContext)
     const { addGig } = useContext(GigContext)
     const gigs = useRef("")
 
-    const foundGigUser = user.find(singleUser => singleUser.id === parseInt(localStorage.getItem("currentUser")))
+    const foundGigUser = theUser.find(singleUser => singleUser.id === parseInt(localStorage.getItem("currentUser")))
 console.log(foundGigUser)
     const constructNewGig = () => {
             addGig({

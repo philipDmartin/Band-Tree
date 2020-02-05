@@ -7,7 +7,7 @@ export default (props) => {
 
     const { theGig } = useContext(GigContext)
     
-console.log(gigs)
+console.log(theGig)
     return (
         <div className="gigs">
             <h1>Gigs</h1>

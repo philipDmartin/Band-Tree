@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 
-import { UserProvider } from "./user/UserProvider"
+import { UserProvider } from "./users/UserProvider"
 
 import { GigProvider } from "./gig/GigProvider";
 import GigForm from "./gig/GigForm";
