@@ -1,6 +1,7 @@
 import React from "react"
 import { Route, Redirect } from "react-router-dom"
-import NavBar from "./nav/Navbar"
+import NavBar from "./nav/NavBar"
+import "./nav/NavBars.css"
 // import ApplicationViews from "./ApplicationViews"
 import "./BandTree.css"
 import Login from "./auth/Login"
@@ -14,7 +15,7 @@ export default () => (
                     <>
                         <Route render={props => <NavBar {...props} />} />
                         {/* <Route render={props => <ApplicationViews {...props} />} /> */}
-                    </>
+                  </>
                 )
             } else {
                 return <Redirect to="/login" />
