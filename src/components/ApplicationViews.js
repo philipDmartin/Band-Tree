@@ -11,15 +11,19 @@ export default props => {
     return (
         <>
             <GigProvider>
-                <Route exact 
-                    path="/gigs" render={props => <GigList {...props} />
-                    } />
-                <Route exact path="/gigs/create">
-                    <GigForm />
-                </Route>
-                <Route path="/gigs/edit/:gigId(\d+)" render={
-                    props => <GigForm {...props} />
-                    } />
+                <UserProvider>
+
+                    <Route exact 
+                        path="/gigs" render={props => <GigList {...props} />
+                        } />
+                    <Route exact path="/gigs/create">
+                        <GigForm />
+                    </Route>
+                    <Route path="/gigs/edit/:gigId(\d+)" render={
+                        props => <GigForm {...props} />
+                        } />
+                        
+                </UserProvider>
             </GigProvider>
         </>
     );

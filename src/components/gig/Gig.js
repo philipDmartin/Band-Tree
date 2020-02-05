@@ -9,9 +9,9 @@ export default ({gig, match, history}) => {
 
     return (
     <section className="gig">
-         <div className="gig__gig">{gig.venue}</div>
-         <div className="gig__sender">{gig.date}</div>
-         <div className="gig__sender">{gig.time}</div>
+         <div className="gig__venue">{gig.venue}</div>
+         <div className="gig__date">{gig.time}</div>
+         <div className="gig__time">{gig.date}</div>
 
         <button onClick={() => {
                 history.push(`/gigs/edit/${gig.id}`)
@@ -21,7 +21,7 @@ export default ({gig, match, history}) => {
                 onClick={() => {
                 deleteGig(gig)
                     .then(() => {
-                        history.push("/")
+                        history.push("/Gigs")
                      })
                     }} >Delete
             </button>
