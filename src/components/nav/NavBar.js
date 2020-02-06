@@ -12,7 +12,7 @@ export default (props) => {
                 <Link className="navbar__link" to="/gigs">Gigs</Link>
             </li> 
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/setLists">Set List</Link>
+                <Link className="navbar__link" to="/songs">Set List</Link>
             </li> 
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/notes">Notes</Link>

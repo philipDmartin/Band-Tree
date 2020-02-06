@@ -7,7 +7,6 @@ import "./Gigs.css"
 export default props => {
     const { user } = useContext(UserContext)
     const { addGig } = useContext(GigContext)
-    const gigs = useRef("")
     const venues = useRef("")
     const dates = useRef("")
     const times = useRef("")

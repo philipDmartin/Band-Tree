@@ -1,0 +1,21 @@
+.songList {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.song {
+    flex-basis: 33%;
+    margin: 1em;
+    padding: 1em;
+    border: 1px solid goldenrod;
+}
+fieldset {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+}
+
+.song__sender {
+    font-size: larger;
+    color: darkred;
+}
