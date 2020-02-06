@@ -43,9 +43,9 @@ export default props => {
                         <Route path="/notes/edit/:noteId(\d+)" render={
                             props => <NoteForm {...props} />
                             } />
-                        {/* <Route path="/notes/:ntoeId(\d+)" render={
+                        <Route path="/notes/:ntoeId(\d+)" render={
                             props => <NoteDetails {...props} />
-                        } /> */}
+                        } />
 
                         <Route exact 
                             path="/songs" render={props => <SongList {...props} />
