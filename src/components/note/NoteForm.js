@@ -17,15 +17,21 @@ export default props => {
         */
         const newNote = Object.assign({}, theNote)
         newNote[event.target.name] = event.target.value
+        
         setNote(newNote)
     }
     const setDefaults = () => {
         if (editMode) {
             const noteId = parseInt(props.match.params.noteId)
             const selectedNote = theNotes.find(n => n.id === noteId) || {}
+            console.log(selectedNote, "notes here")
             setNote(selectedNote)
         }
     }
+  useEffect(() => {
+    console.log(theNote, "note")
+
+  }, [theNote])
 
     useEffect(() => {
         setDefaults()
@@ -33,25 +39,26 @@ export default props => {
 
     const constructNewNote = () => {
         const noteId = parseInt(theNote.noteId)
-
-        if (noteId === 0) {
-            window.alert("Please select a note")
-        } else {
             if (editMode) {
+               
                 updateNote({
                     id: theNote.id,
-                    note: theNote.note
+                    note: theNote.note,
+                    userId: parseInt(localStorage.getItem("bandtree__user"))
                 })
                     .then(() => props.history.push("/notes"))
             } else {
+             
                 addNote({
                   id: theNote.id,
-                  note: theNote.note
+                  note: theNote.note,
+                  userId: parseInt(localStorage.getItem("bandtree__user"))
+
                 })
                     .then(() => props.history.push("/notes"))
             }
         }
-    }
+    
 
      return (
     <form className='eventForm'>
@@ -64,24 +71,16 @@ export default props => {
         <input
           type='text'
           id='note'
-          ref={theNotes}
+          name='note'
+          // ref={theNotes}
+          defaultValue={theNote.note}
           required
           autoFocus
           className='form-control'
           placeholder='Please Type Note'
+          onChange={handleControlledInputChange}
         />
       </div>
-
-      {/* <button
-        type='submit'
-        onClick={evt => {
-          evt.preventDefault() // Prevent browser from submitting the form
-          constructNewNote()
-        }}
-        className='btn btn-primary'
-      >
-        Save Note
-      </button> */}
 
       <button
         type='submit'
