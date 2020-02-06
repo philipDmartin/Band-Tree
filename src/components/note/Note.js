@@ -15,7 +15,7 @@ export default ({note, match, history}) => {
                 history.push(`/notes/edit/${note.id}`)
             }}>Edit</button>
 
-         <button className="btn--delete"
+            <button className="btn--delete"
                 onClick={() => {
                 deleteNote(note)
                     .then(() => {

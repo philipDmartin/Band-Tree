@@ -15,7 +15,7 @@ export default props => {
     singleUser =>
       singleUser.id === parseInt(localStorage.getItem('currentUser'))
   )
-//   console.log(foundNoteUser)
+  //   console.log(foundNoteUser)
 
   const editMode = props.match.params.hasOwnProperty('noteId')
 
@@ -24,9 +24,10 @@ export default props => {
     newNote[event.target.name] = event.target.value
     setNote(newNote)
   }
+
   const setDefaults = () => {
     if (editMode) {
-      const noteId = parseInt(props.match.params.note)
+      const noteId = parseInt(props.match.params.noteId)
       const selectedNote = theNote.find(n => n.id === notes) || []
       setNote(selectedNote)
     }
@@ -73,7 +74,7 @@ export default props => {
         />
       </div>
 
-      <button
+      {/* <button
         type='submit'
         onClick={evt => {
           evt.preventDefault() // Prevent browser from submitting the form
@@ -82,7 +83,7 @@ export default props => {
         className='btn btn-primary'
       >
         Save Note
-      </button>
+      </button> */}
 
       <button
         type='submit'

@@ -11,7 +11,7 @@ export default props => {
 
   const chosenNoteId = parseInt(props.match.params.noteId, 10)
 
-  const theNote = theNotes.find(not => not.id === chosenNoteId) || {}
+  const theNote = theNotes.find(not => not.id === chosenNoteId) || []
 //   const theCustomer = theCustomers.find(cus => cus.id === theAnimal.customerId) || {}
 //   const theLocation = theLocations.find(loc => loc.id === theAnimal.locationId) || {}
 
@@ -19,11 +19,11 @@ export default props => {
     <section className='note'>
       <h3 className='note__note'>{theNote.note}</h3>
 
-      <button
+      {/* <button
         onClick={() => {
           props.history.push(`/notes/edit/${theNote.id}`)
         }}> Edit
-      </button>
+      </button> */}
 
       {/* <button
         onClick={() => {
