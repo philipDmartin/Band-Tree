@@ -4,7 +4,7 @@ import { SongContext } from "./SongProvider"
 
 export default props => {
     const { addSong, theSongs, updateSong } = useContext(SongContext)
-    const [theSong, setSong] = useState({})
+    const [theSong, setSongs] = useState({})
 
     const editMode = props.match.params.hasOwnProperty("songId")
 
@@ -12,14 +12,14 @@ export default props => {
         const newSong = Object.assign({}, theSong)
         newSong[event.target.name] = event.target.value
         
-        setSong(newSong)
+        setSongs(newSong)
     }
     const setDefaults = () => {
         if (editMode) {
             const songId = parseInt(props.match.params.songId)
             const selectedSong = theSongs.find(s => s.id === songId) || {}
             console.log(selectedSong, "songs here")
-            setSong(selectedSong)
+            setSongs(selectedSong)
         }
     }
   useEffect(() => {
@@ -39,7 +39,7 @@ export default props => {
                     id: theSong.id,
                     title: theSong.title,
                     key: theSong.key,
-                    userId: parseInt(localStorage.getItem("bandtree__user"))
+                    userId: parseInt(localStorage.getItem("bandtree__users"))
                 })
                     .then(() => props.history.push("/songs"))
             } else {
@@ -48,23 +48,24 @@ export default props => {
                     id: theSong.id,
                     title: theSong.title,
                     key: theSong.key,
-                    userId: parseInt(localStorage.getItem("bandtree__user"))
+                    userId: parseInt(localStorage.getItem("bandtree__users"))
 
                 })
                     .then(() => props.history.push("/songs"))
             }
         }
-    
 
      return (
     <form className="eventForm">
-            <h2 className="eventForm__title">New Song</h2>
-
+        <h2 className='SongForm__Song'>
+          {editMode ? 'Update Song' : 'Admit Song'}
+        </h2>
             <div className="form-group">
                 <label htmlFor="title">Song Title</label>
                 <input
                     type="text"
                     id="title"
+                    name='title'
                     // ref={title}
                     defaultValue={theSong.title}
                     required
@@ -80,6 +81,7 @@ export default props => {
                     type="text"
                     id="key"
                     // ref={key}
+                    name='key'
                     defaultValue={theSong.key}
                     required
                     autoFocus

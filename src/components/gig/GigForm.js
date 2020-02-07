@@ -3,7 +3,7 @@ import { GigContext } from "./GigProvider"
 
 export default props => {
     const { addGig, theGigs, updateGig } = useContext(GigContext)
-    const [theGig, setGig] = useState({})
+    const [theGig, setGigs] = useState({})
 
     const editMode = props.match.params.hasOwnProperty("gigId")
 
@@ -11,14 +11,14 @@ export default props => {
         const newGig = Object.assign({}, theGig)
         newGig[event.target.name] = event.target.value
         
-        setGig(newGig)
+        setGigs(newGig)
     }
     const setDefaults = () => {
         if (editMode) {
             const gigId = parseInt(props.match.params.gigId)
             const selectedGig = theGigs.find(g => g.id === gigId) || {}
             console.log(selectedGig, "gigs here")
-            setGig(selectedGig)
+            setGigs(selectedGig)
         }
     } 
   useEffect(() => {
@@ -58,13 +58,16 @@ export default props => {
 
       return (
         <form className="eventForm">
-            <h2 className="eventForm__title">New Gig</h2>
+            <h2 className='GigForm__Gig'>
+              {editMode ? 'Update Gig' : 'Admit Gig'}
+            </h2>
 
             <div className="form-group">
                 <label htmlFor="venue">Venue</label>
                 <input
                     type="text"
                     id="venue"
+                    name='venue'
                     // ref={venues}
                     defaultValue={theGig.venue}
                     required
@@ -79,6 +82,7 @@ export default props => {
                 <input
                     type="text"
                     id="date"
+                    name='date'
                     // ref={dates}
                     defaultValue={theGig.date}
                     required
@@ -93,6 +97,7 @@ export default props => {
                 <input
                     type="text"
                     id="time"
+                    name='time'
                     // ref={times}
                     defaultValue={theGig.time}
                     required

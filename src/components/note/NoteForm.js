@@ -1,10 +1,9 @@
 import React, { useContext, useState, useEffect } from "react"
 import { NoteContext } from "./NoteProvider"
 
-
 export default props => {
     const { addNote, theNotes, updateNote } = useContext(NoteContext)
-    const [theNote, setNote] = useState({})
+    const [theNote, setNotes] = useState({})
 
     const editMode = props.match.params.hasOwnProperty("noteId")
 
@@ -12,14 +11,14 @@ export default props => {
         const newNote = Object.assign({}, theNote)
         newNote[event.target.name] = event.target.value
         
-        setNote(newNote)
+        setNotes(newNote)
     }
     const setDefaults = () => {
         if (editMode) {
             const noteId = parseInt(props.match.params.noteId)
             const selectedNote = theNotes.find(n => n.id === noteId) || {}
             console.log(selectedNote, "notes here")
-            setNote(selectedNote)
+            setNotes(selectedNote)
         }
     }
   useEffect(() => {
