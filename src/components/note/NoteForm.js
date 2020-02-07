@@ -1,20 +1,14 @@
 import React, { useContext, useState, useEffect } from "react"
 import { NoteContext } from "./NoteProvider"
-// import { LocationContext } from "../location/LocationProvider"
 
 
 export default props => {
-    // const { locations } = useContext(LocationContext)
     const { addNote, theNotes, updateNote } = useContext(NoteContext)
     const [theNote, setNote] = useState({})
 
     const editMode = props.match.params.hasOwnProperty("noteId")
 
     const handleControlledInputChange = (event) => {
-        /*
-            When changing a state object or array, always create a new one
-            and change state instead of modifying current one
-        */
         const newNote = Object.assign({}, theNote)
         newNote[event.target.name] = event.target.value
         
@@ -72,7 +66,6 @@ export default props => {
           type='text'
           id='note'
           name='note'
-          // ref={theNotes}
           defaultValue={theNote.note}
           required
           autoFocus
@@ -90,7 +83,7 @@ export default props => {
         }}
         className='btn btn-primary'
       >
-        {editMode ? 'Save Updates' : 'Make Appointment'}
+        {editMode ? 'Save Updates' : 'Make Note'}
       </button>
     </form>
   )
