@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 export const SongContext = React.createContext()
 
 export const SongProvider = (props) => {
-    const [theSong, setSongs] = useState([])
+    const [theSongs, setSongs] = useState([])
 
     const getSongs = () => {
         return fetch("http://localhost:8088/songs")
@@ -30,7 +30,7 @@ export const SongProvider = (props) => {
     }
 
     const updateSong = song => {
-        return fetch(`http://localhost:8088/songs/${song}`, {
+        return fetch(`http://localhost:8088/songs/${song.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -45,16 +45,16 @@ export const SongProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log(theSong)
+        console.log(theSongs)
         console.log("songs app state changed")
         // if (checkedMessages.length == messages.length){
         //     console.log("time to get messages")
         // }
-    }, [theSong])
+    }, [theSongs])
       
     return (
         <SongContext.Provider value={{
-            theSong, addSong, deleteSong, updateSong
+            theSongs, addSong, deleteSong, updateSong
         }}>
             {props.children}
         </SongContext.Provider>
