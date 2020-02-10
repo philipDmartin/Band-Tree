@@ -4,7 +4,6 @@ import "./Logins.css"
 import { InstrumentContext } from '../instrument/InstrumentProvider'
 import { BandContext } from '../band/BandProvider'
 
-
 const Login = props => {
     const { theBands, updateBand } = useContext(BandContext)
     const { theInstruments, updateInstrument } = useContext(InstrumentContext)
