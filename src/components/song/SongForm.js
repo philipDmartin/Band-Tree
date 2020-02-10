@@ -1,9 +1,12 @@
 import React, { useContext, useState, useEffect } from "react"
 import { SongContext } from "./SongProvider"
-
+import { BandContext } from "../band/BandProvider"
+import {UserContext} from "../users/UserProvider"
 
 export default props => {
     const { addSong, theSongs, updateSong } = useContext(SongContext)
+    const { theBands } = useContext(BandContext)
+    const { user } = useContext(UserContext)
     const [theSong, setSongs] = useState({})
 
     const editMode = props.match.params.hasOwnProperty("songId")
@@ -33,13 +36,16 @@ export default props => {
 
     const constructNewSong = () => {
         const songId = parseInt(theSong.songId)
+        const currentUser = parseInt(localStorage.getItem("currentUser"))
+        const currentGigUserObject = user.find(u => u.id === currentUser)
+        const currentBand = currentGigUserObject.bandId
             if (editMode) {
                
                 updateSong({
                     id: theSong.id,
                     title: theSong.title,
                     key: theSong.key,
-                    bandId: parseInt(localStorage.getItem("bandtree__users"))
+                    bandId: currentBand
                 })
                     .then(() => props.history.push("/songs"))
             } else {
@@ -48,7 +54,7 @@ export default props => {
                     id: theSong.id,
                     title: theSong.title,
                     key: theSong.key,
-                    bandId: parseInt(localStorage.getItem("bandtree__users"))
+                    bandId: currentBand
 
                 })
                     .then(() => props.history.push("/songs"))

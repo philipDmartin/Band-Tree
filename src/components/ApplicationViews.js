@@ -21,12 +21,12 @@ import { BandProvider } from "./band/BandProvider";
 
 export default props => {
     return (
-        <><UserProvider>
-        <SongProvider>
-            <NoteProvider>
-                <BandProvider>
-                <GigProvider>
-                    
+        <>
+        <UserProvider>
+            <SongProvider>
+                <NoteProvider>
+                    <BandProvider>
+                        <GigProvider>
 
                         <Route exact 
                             path="/gigs" render={props => <GigList {...props} />
@@ -63,11 +63,10 @@ export default props => {
                             props => <SongForm {...props} />
                             } />
 
-                   
-                </GigProvider>
-                 </BandProvider>
-            </NoteProvider>
-        </SongProvider> 
+                        </GigProvider>
+                    </BandProvider>
+                </NoteProvider>
+            </SongProvider> 
         </UserProvider>
         </>
     );

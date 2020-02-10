@@ -37,7 +37,6 @@ export default props => {
         const gigId = parseInt(theGig.gigId)
         const currentUser = parseInt(localStorage.getItem("currentUser"))
         const currentGigUserObject = user.find(u => u.id === currentUser)
-        // debugger
         const currentBand = currentGigUserObject.bandId
         
             if (editMode) {
