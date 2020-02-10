@@ -50,7 +50,6 @@ export default props => {
                     date: theGig.date,
                     time: theGig.time,
                     bandId: parseInt(localStorage.getItem("bandtree__user"))
-
                 })
                     .then(() => props.history.push("/gigs"))
             }
