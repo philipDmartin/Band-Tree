@@ -39,7 +39,7 @@ export default props => {
                     id: theSong.id,
                     title: theSong.title,
                     key: theSong.key,
-                    userId: parseInt(localStorage.getItem("bandtree__users"))
+                    bandId: parseInt(localStorage.getItem("bandtree__users"))
                 })
                     .then(() => props.history.push("/songs"))
             } else {
@@ -48,7 +48,7 @@ export default props => {
                     id: theSong.id,
                     title: theSong.title,
                     key: theSong.key,
-                    userId: parseInt(localStorage.getItem("bandtree__users"))
+                    bandId: parseInt(localStorage.getItem("bandtree__users"))
 
                 })
                     .then(() => props.history.push("/songs"))

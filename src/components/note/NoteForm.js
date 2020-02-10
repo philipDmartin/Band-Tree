@@ -37,7 +37,7 @@ export default props => {
                 updateNote({
                     id: theNote.id,
                     note: theNote.note,
-                    userId: parseInt(localStorage.getItem("bandtree__user"))
+                    bandId: parseInt(localStorage.getItem("bandtree__user"))
                 })
                     .then(() => props.history.push("/notes"))
             } else {
@@ -45,7 +45,7 @@ export default props => {
                 addNote({
                   id: theNote.id,
                   note: theNote.note,
-                  userId: parseInt(localStorage.getItem("bandtree__user"))
+                  bandId: parseInt(localStorage.getItem("bandtree__user"))
 
                 })
                     .then(() => props.history.push("/notes"))
@@ -81,7 +81,7 @@ export default props => {
           constructNewNote()
         }}
         className='btn btn-primary'
-      >
+      > 
         {editMode ? 'Save Updates' : 'Make Note'}
       </button>
     </form>

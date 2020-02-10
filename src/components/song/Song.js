@@ -11,7 +11,7 @@ export default ({song, match, history}) => {
     <section className="song">
          <div className="song__title">{song.title}</div>
          <div className="song__key">{song.key}</div>
-         <div className="song__user">{song.userId}</div>
+         <div className="song__band">{song.bandId}</div>
 
         <button onClick={() => {
                 history.push(`/songs/edit/${song.id}`)

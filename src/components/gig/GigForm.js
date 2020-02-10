@@ -13,7 +13,7 @@ export default props => {
         
         setGigs(newGig)
     }
-    const setDefaults = () => {
+    const setDefaults = () => {  
         if (editMode) {
             const gigId = parseInt(props.match.params.gigId)
             const selectedGig = theGigs.find(g => g.id === gigId) || {}
@@ -39,7 +39,7 @@ export default props => {
                     venue: theGig.venue,
                     date: theGig.date,
                     time: theGig.time,
-                    userId: parseInt(localStorage.getItem("bandtree__user"))
+                    bandId: parseInt(localStorage.getItem("bandtree__user"))
                 })
                     .then(() => props.history.push("/gigs"))
             } else {
@@ -49,7 +49,7 @@ export default props => {
                     venue: theGig.venue,
                     date: theGig.date,
                     time: theGig.time,
-                    userId: parseInt(localStorage.getItem("bandtree__user"))
+                    bandId: parseInt(localStorage.getItem("bandtree__user"))
 
                 })
                     .then(() => props.history.push("/gigs"))
