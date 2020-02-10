@@ -13,8 +13,8 @@ import { BandContext } from '../band/BandProvider'
   const username = useRef()
   const password = useRef()
   const verifyPassword = useRef()
-  const instrument = useRef()
-  const band = useRef()
+  const instrumentId = useRef()
+  const bandId = useRef()
 
   const existingUserCheck = () => {
     return fetch(`http://localhost:8088/users?email=${email.current.value}`)
@@ -42,8 +42,8 @@ import { BandContext } from '../band/BandProvider'
             username: username.current.value,
             password: password.current.value,
             name: `${name.current.value}`,
-            instrument: instrument.current.value,
-            band: band.current.value
+            instrumentId: instrumentId.current.value,
+            bandId: bandId.current.value
           })
         })
           .then(_ => _.json())
@@ -79,14 +79,14 @@ import { BandContext } from '../band/BandProvider'
         </fieldset>
         <fieldset>
           <div className='form-group'>
-            <label htmlFor='instrument'>Assign instrument: </label>
+            <label htmlFor='instrumentId'>Assign instrument: </label>
             <select
               defaultValue=''
-              name='instrument'
-              ref={instrument}
-              id='instrument'
+              name='instrumentId'
+              ref={instrumentId}
+              id='instrumentId'
               className='form-control'
-              placeholder='instrument'
+              placeholder='instrumentId'
               required
               autoFocus
             >
@@ -101,14 +101,14 @@ import { BandContext } from '../band/BandProvider'
         </fieldset>
         <fieldset>
           <div className='form-group'>
-            <label htmlFor='band'>Assign band: </label>
+            <label htmlFor='bandId'>Assign band: </label>
             <select
               defaultValue=''
-              name='band'
-              ref={band}
-              id='band'
+              name='bandId'
+              ref={bandId}
+              id='bandId'
               className='form-control'
-              placeholder='band'
+              placeholder='bandId'
               required
               autoFocus
             >
