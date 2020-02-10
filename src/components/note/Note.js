@@ -10,6 +10,7 @@ export default ({note, match, history}) => {
     return (
     <section className="note">
          <div className="note__note">{note.note}</div>
+         <div className="note__band">{note.bandId}</div>
 
         <button onClick={() => {
                 history.push(`/notes/edit/${note.id}`)

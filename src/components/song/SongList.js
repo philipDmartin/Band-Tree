@@ -5,18 +5,18 @@ import "./Songs.css"
 
 export default (props) => {
 
-    const { theSong } = useContext(SongContext)
+    const { theSongs } = useContext(SongContext)
     
-console.log(theSong)
+console.log(theSongs)
     return (
         <div className="songs">
             <h1>Set Lists</h1>
-            <button onClick={() => props.history.push("/Songs/create")}>
+            <button onClick={() => props.history.push("/songs/create")}>
                 Add Song
             </button>
             <article className="songList">
                 {
-                    theSong.map(song => <Song key={song} song={song} {...props} />)
+                    theSongs.map(song => <Song key={song} song={song} {...props} />)
                 }
             </article>
         </div>

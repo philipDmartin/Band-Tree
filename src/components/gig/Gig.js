@@ -7,11 +7,12 @@ import "./Gigs.css"
 export default ({gig, match, history}) => {
     const { theGig, deleteGig } = useContext(GigContext)
 
-    return (
+    return ( 
     <section className="gig">
          <div className="gig__venue">{gig.venue}</div>
-         <div className="gig__date">{gig.time}</div>
-         <div className="gig__time">{gig.date}</div>
+         <div className="gig__date">{gig.date}</div>
+         <div className="gig__time">{gig.time}</div>
+         <div className="gig__band">{gig.bandId}</div>
 
         <button onClick={() => {
                 history.push(`/gigs/edit/${gig.id}`)
@@ -27,3 +28,71 @@ export default ({gig, match, history}) => {
             </button>
     </section>
 )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  return (
+//         <form className="eventForm">
+//             <h2 className="eventForm__title">New Gig</h2>
+
+//             <div className="form-group">
+//                 <label htmlFor="venue">Venue</label>
+//                 <input
+//                     type="text"
+//                     id="venue"
+//                     ref={venues}
+//                     required
+//                     autoFocus
+//                     className="form-control"
+//                     placeholder="Please Enter Venue"
+//                 />
+//             </div>
+//             <div className="form-group">
+//                 <label htmlFor="date">Date</label>
+//                 <input
+//                     type="text"
+//                     id="date"
+//                     ref={dates}
+//                     required
+//                     autoFocus
+//                     className="form-control"
+//                     placeholder="Please Enter Date"
+//                 />
+//             </div>
+//             <div className="form-group">
+//                 <label htmlFor="time">Time</label>
+//                 <input
+//                     type="text"
+//                     id="time"
+//                     ref={times}
+//                     required
+//                     autoFocus
+//                     className="form-control"
+//                     placeholder="Please Enter Time"
+//                 />
+//             </div>
+//             <button type="submit"
+//                 onClick={
+//                     evt => {
+//                         evt.preventDefault() // Prevent browser from submitting the form
+//                         constructNewGig()
+//                     }
+//                 }
+//                 className="btn btn-primary">
+//                 Save Gig
+//             </button>
+//         </form>
+//     )

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 export const NoteContext = React.createContext()
 
 export const NoteProvider = (props) => {
-    const [theNote, setNotes] = useState([])
+    const [theNotes, setNotes] = useState([])
 
     const getNotes = () => {
         return fetch("http://localhost:8088/notes")
@@ -45,16 +45,16 @@ export const NoteProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log(theNote)
+        console.log(theNotes)
         console.log("notes app state changed")
         // if (checkedMessages.length == messages.length){
         //     console.log("time to get messages")
         // }
-    }, [theNote])
+    }, [theNotes])
 
     return (
         <NoteContext.Provider value={{
-            theNote, addNote, deleteNote, updateNote
+            theNotes, addNote, deleteNote, updateNote
         }}>
             {props.children}
         </NoteContext.Provider>

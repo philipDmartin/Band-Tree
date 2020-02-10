@@ -27,9 +27,9 @@ export default props => {
                         <Route exact 
                             path="/gigs" render={props => <GigList {...props} />
                             } />
-                        <Route exact path="/gigs/create">
-                            <GigForm />
-                        </Route>
+                        <Route exact 
+                            path="/gigs/create" render={props => <GigForm {...props} />
+                            } />
                         <Route path="/gigs/edit/:gigId(\d+)" render={
                             props => <GigForm {...props} />
                             } />
@@ -37,9 +37,11 @@ export default props => {
                         <Route exact 
                             path="/notes" render={props => <NoteList {...props} />
                             } />
-                        <Route exact path="/notes/create">
-                            <NoteForm />
-                        </Route>
+
+                        <Route exact 
+                            path="/notes/create" render={props => <NoteForm {...props} />
+                            } />
+
                         <Route path="/notes/edit/:noteId(\d+)" render={
                             props => <NoteForm {...props} />
                             } />
@@ -50,9 +52,9 @@ export default props => {
                         <Route exact 
                             path="/songs" render={props => <SongList {...props} />
                             } />
-                        <Route exact path="/songs/create">
-                            <SongForm />
-                        </Route>
+                       <Route exact 
+                            path="/songs/create" render={props => <SongForm {...props} />
+                            } />
                         <Route path="/songs/edit/:songId(\d+)" render={
                             props => <SongForm {...props} />
                             } />

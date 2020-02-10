@@ -10,7 +10,7 @@ export const InstrumentContext = React.createContext()
  This component establishes what data can be used.
  */
 export const InstrumentProvider = (props) => {
-    const [theInstrument, setInstruments] = useState([])
+    const [theInstruments, setInstruments] = useState([])
 
     const getInstruments = () => {
         return fetch("http://localhost:8088/instruments")
@@ -39,7 +39,7 @@ export const InstrumentProvider = (props) => {
 
     return (
         <InstrumentContext.Provider value={{
-            theInstrument, addInstrument
+            theInstruments, addInstrument
         }}>
             {props.children}
         </InstrumentContext.Provider>

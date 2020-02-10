@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 export const GigContext = React.createContext()
 
 export const GigProvider = (props) => {
-    const [theGig, setGigs] = useState([])
+    const [theGigs, setGigs] = useState([])
 
     const getGigs = () => {
         return fetch("http://localhost:8088/gigs")
@@ -30,7 +30,7 @@ export const GigProvider = (props) => {
     }
 
     const updateGig = gig => {
-        return fetch(`http://localhost:8088/gigs/${gig}`, {
+        return fetch(`http://localhost:8088/gigs/${gig.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -45,16 +45,16 @@ export const GigProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log(theGig)
+        console.log(theGigs)
         console.log("gigs app state changed")
         // if (checkedMessages.length == messages.length){
         //     console.log("time to get messages")
         // }
-    }, [theGig])
+    }, [theGigs])
 
     return (
         <GigContext.Provider value={{
-            theGig, addGig, deleteGig, updateGig
+            theGigs, addGig, deleteGig, updateGig
         }}>
             {props.children}
         </GigContext.Provider>

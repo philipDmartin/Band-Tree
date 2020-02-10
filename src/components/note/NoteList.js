@@ -5,9 +5,9 @@ import "./Notes.css"
 
 export default (props) => {
 
-    const { theNote } = useContext(NoteContext)
+    const { theNotes } = useContext(NoteContext)
     
-console.log(theNote)
+console.log(theNotes)
     return (
         <div className="notes">
             <h1>Notes</h1>
@@ -16,7 +16,7 @@ console.log(theNote)
             </button>
             <article className="noteList">
                 {
-                    theNote.map(note => <Note key={note} note={note} {...props} />)
+                    theNotes.map(note => <Note key={note} note={note} {...props} />)
                 }
             </article>
         </div>

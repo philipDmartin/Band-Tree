@@ -1,61 +1,59 @@
-import React, { useContext, useRef } from 'react'
-import { useState, useEffect } from 'react'
-import { NoteContext } from './NoteProvider'
-import { UserContext } from '../users/UserProvider'
-import './Notes.css'
+import React, { useContext, useState, useEffect } from "react"
+import { NoteContext } from "./NoteProvider"
 
 export default props => {
-  const { user } = useContext(UserContext)
-  const { addNote, updateNote, theNotes } = useContext(NoteContext)
-  const [theNote, setNote] = useState([])
+    const { addNote, theNotes, updateNote } = useContext(NoteContext)
+    const [theNote, setNotes] = useState({})
 
-  const notes = useRef('')
+    const editMode = props.match.params.hasOwnProperty("noteId")
 
-  const foundNoteUser = user.find(
-    singleUser =>
-      singleUser.id === parseInt(localStorage.getItem('currentUser'))
-  )
-  //   console.log(foundNoteUser)
-
-  const editMode = props.match.params.hasOwnProperty('noteId')
-
-  const handleControlledInputChange = event => {
-    const newNote = Object.assign({}, theNote)
-    newNote[event.target.name] = event.target.value
-    setNote(newNote)
-  }
-
-  const setDefaults = () => {
-    if (editMode) {
-      const noteId = parseInt(props.match.params.noteId)
-      const selectedNote = theNote.find(n => n.id === notes) || []
-      setNote(selectedNote)
+    const handleControlledInputChange = (event) => {
+        const newNote = Object.assign({}, theNote)
+        newNote[event.target.name] = event.target.value
+        
+        setNotes(newNote)
     }
-  }
-
+    const setDefaults = () => {
+        if (editMode) {
+            const noteId = parseInt(props.match.params.noteId)
+            const selectedNote = theNotes.find(n => n.id === noteId) || {}
+            console.log(selectedNote, "notes here")
+            setNotes(selectedNote)
+        }
+    }
   useEffect(() => {
-    setDefaults()
-  }, [theNotes])
+    console.log(theNote, "note")
 
-  const constructNewNote = () => {
-    const noteId = parseInt(theNote.noteId)
+  }, [theNote])
 
-    if (noteId === 0) {
-      window.alert('Please select a note')
-    } else {
-      if (editMode) {
-        updateNote({
-          note: notes.current.value
-        }).then(() => props.history.push('/notes'))
-      } else {
-        addNote({
-          note: theNote.notes
-        }).then(() => props.history.push('/notes'))
-      }
-    }
-  }
+    useEffect(() => {
+        setDefaults()
+    }, [theNotes])
 
-  return (
+    const constructNewNote = () => {
+        const noteId = parseInt(theNote.noteId)
+            if (editMode) {
+               
+                updateNote({
+                    id: theNote.id,
+                    note: theNote.note,
+                    bandId: parseInt(localStorage.getItem("bandtree__user"))
+                })
+                    .then(() => props.history.push("/notes"))
+            } else {
+             
+                addNote({
+                  id: theNote.id,
+                  note: theNote.note,
+                  bandId: parseInt(localStorage.getItem("bandtree__user"))
+
+                })
+                    .then(() => props.history.push("/notes"))
+            }
+        }
+    
+
+     return (
     <form className='eventForm'>
       <h2 className='NoteForm__note'>
         {editMode ? 'Update Note' : 'Admit Note'}
@@ -66,24 +64,15 @@ export default props => {
         <input
           type='text'
           id='note'
-          ref={notes}
+          name='note'
+          defaultValue={theNote.note}
           required
           autoFocus
           className='form-control'
           placeholder='Please Type Note'
+          onChange={handleControlledInputChange}
         />
       </div>
-
-      {/* <button
-        type='submit'
-        onClick={evt => {
-          evt.preventDefault() // Prevent browser from submitting the form
-          constructNewNote()
-        }}
-        className='btn btn-primary'
-      >
-        Save Note
-      </button> */}
 
       <button
         type='submit'
@@ -92,8 +81,8 @@ export default props => {
           constructNewNote()
         }}
         className='btn btn-primary'
-      >
-        {editMode ? 'Save Updates' : 'Make Appointment'}
+      > 
+        {editMode ? 'Save Updates' : 'Make Note'}
       </button>
     </form>
   )

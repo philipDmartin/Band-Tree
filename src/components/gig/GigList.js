@@ -5,9 +5,9 @@ import "./Gigs.css"
 
 export default (props) => {
 
-    const { theGig } = useContext(GigContext)
+    const { theGigs } = useContext(GigContext)
     
-console.log(theGig)
+console.log(theGigs)
     return (
         <div className="gigs">
             <h1>Gigs</h1>
@@ -16,9 +16,9 @@ console.log(theGig)
             </button>
             <article className="gigList">
                 {
-                    theGig.map(gig => <Gig key={gig} gig={gig} {...props} />)
+                    theGigs.map(gig => <Gig key={gig} gig={gig} {...props} />)
                 }
             </article>
-        </div>
+        </div> 
     )    
 }
