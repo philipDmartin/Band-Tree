@@ -16,13 +16,17 @@ import { SongProvider } from "./song/SongProvider";
 import SongForm from "./song/SongForm";
 import SongList from "./song/SongList";
 
+import { BandProvider } from "./band/BandProvider";
+
+
 export default props => {
     return (
-        <>
+        <><UserProvider>
         <SongProvider>
             <NoteProvider>
+                <BandProvider>
                 <GigProvider>
-                    <UserProvider>
+                    
 
                         <Route exact 
                             path="/gigs" render={props => <GigList {...props} />
@@ -59,10 +63,12 @@ export default props => {
                             props => <SongForm {...props} />
                             } />
 
-                    </UserProvider>
+                   
                 </GigProvider>
+                 </BandProvider>
             </NoteProvider>
-        </SongProvider>
+        </SongProvider> 
+        </UserProvider>
         </>
     );
 };
