@@ -6,6 +6,8 @@ import ApplicationViews from "./ApplicationViews"
 import "./BandTree.css"
 import Login from "./auth/Login"
 import Register from "./auth/Register"
+import {InstrumentProvider} from './instrument/InstrumentProvider'
+import {BandProvider} from './band/BandProvider'
 
 export default () => (
     <>
@@ -21,7 +23,17 @@ export default () => (
                 return <Redirect to="/login" />
             }
         }} />
-        <Route path="/login" render={props => <Login {...props} />} />
-        <Route path="/register" render={props => <Register {...props} />} />
+    <InstrumentProvider>
+        <BandProvider>
+            <Route path="/login" render={props => <Login {...props} />} />
+        </BandProvider>
+    </InstrumentProvider>
+
+    <InstrumentProvider>
+        <BandProvider>
+            <Route path="/register" render={props => <Register {...props} />} />
+        </BandProvider>
+    </InstrumentProvider>
+
     </>
 )

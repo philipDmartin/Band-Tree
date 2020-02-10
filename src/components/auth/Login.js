@@ -1,10 +1,18 @@
-import React, { useRef } from "react"
+import React, { useContext, useRef } from "react"
 import { Link } from "react-router-dom";
 import "./Logins.css"
+import { InstrumentContext } from '../instrument/InstrumentProvider'
+import { BandContext } from '../band/BandProvider'
+
 
 const Login = props => {
+    const { theBands, updateBand } = useContext(BandContext)
+    const { theInstruments, updateInstrument } = useContext(InstrumentContext)
+
     const email = useRef()
     const password = useRef()
+    const instrument = useRef()
+    const band = useRef()
 
     const existingUserCheck = () => {
         return fetch(`http://localhost:8088/users?email=${email.current.value}`)
@@ -37,6 +45,8 @@ const Login = props => {
                         body: JSON.stringify({
                             email: email.current.value,
                             password: password.current.value,
+                            instrument: instrument.current.value,
+                            band: band.current.value
                         })
                     })
                         .then(_ => _.json())
@@ -54,6 +64,50 @@ const Login = props => {
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1>Band Tree</h1>
                     <h2>Please sign in</h2>
+                     <fieldset>
+          <div className='form-group'>
+            <label htmlFor='instrument'>Assign instrument: </label>
+            <select
+              defaultValue=''
+              name='instrument'
+              ref={instrument}
+              id='instrument'
+              className='form-control'
+              placeholder='instrument'
+              required
+              autoFocus
+            >
+              <option value='0'>Select a instrument</option>
+              {theInstruments.map(i => (
+                <option key={i.id} value={i.id}>
+                  {i.instrument}
+                </option>
+              ))}
+            </select>
+          </div>
+        </fieldset>
+        <fieldset>
+          <div className='form-group'>
+            <label htmlFor='band'>Assign band: </label>
+            <select
+              defaultValue=''
+              name='band'
+              ref={band}
+              id='band'
+              className='form-control'
+              placeholder='band'
+              required
+              autoFocus
+            >
+              <option value='0'>Select a band</option>
+              {theBands.map(b => (
+                <option key={b.id} value={b.id}>
+                  {b.name}
+                </option>
+              ))}
+            </select>
+          </div>
+        </fieldset>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
                         <input ref={email} type="email"

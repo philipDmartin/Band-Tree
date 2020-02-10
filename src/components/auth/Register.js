@@ -1,11 +1,12 @@
 import React, { useContext, useRef } from 'react'
 import './Logins.css'
-import { InstrumentContext } from './instrument/InstrumentProvider'
-import { BandContext } from './band/BandProvider'
+import { InstrumentContext } from '../instrument/InstrumentProvider'
+import { BandContext } from '../band/BandProvider'
 
-const Register = props => {
-  const { addInstrument, theInstruments, updateInstrument } = useContext(InstrumentContext)
-  const { addBand, theBands, updateBand } = useContext(BandContext)
+  const Register = props => {
+  
+  const { theBands, updateBand } = useContext(BandContext)
+  const { theInstruments, updateInstrument } = useContext(InstrumentContext)
 
   const name = useRef()
   const email = useRef()
@@ -92,7 +93,7 @@ const Register = props => {
               <option value='0'>Select a instrument</option>
               {theInstruments.map(i => (
                 <option key={i.id} value={i.id}>
-                  {i.name}
+                  {i.instrument}
                 </option>
               ))}
             </select>
