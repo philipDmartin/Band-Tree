@@ -12,7 +12,7 @@ export default ({gig, match, history}) => {
          <div className="gig__venue">{gig.venue}</div>
          <div className="gig__date">{gig.date}</div>
          <div className="gig__time">{gig.time}</div>
-         <div className="gig__band">{gig.bandId}</div>
+         {/* <div className="gig__band">{gig.bandId}</div> */}
 
         <button onClick={() => {
                 history.push(`/gigs/edit/${gig.id}`)
