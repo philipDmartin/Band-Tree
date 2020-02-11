@@ -4,12 +4,15 @@ import Band from "./Band"
 
 export default () => {
     const { user } = useContext(UserContext)
+    const theCurrentUser = user.find(u => u.id === parseInt (localStorage.getItem("currentUser"))) || {}
+    const theCurrentUsers = user.filter(u => u.bandId === theCurrentUser.bandId)
+    console.log(theCurrentUsers)
     console.log(user)
 
     return (
         <div className="users">
         {
-            user.map(use => <Band key={use.id} user={use} />)
+            theCurrentUsers.map(use => <Band key={use.id} user={use} />)
         }
         </div>
     )
