@@ -6,7 +6,7 @@ export default (props) => {
     return (
         <ul className="navbar">
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/yourTree">Your Tree</Link>
+                <Link className="navbar__link" to="/bands">Your Tree</Link>
             </li> 
             <li className="navbar__item active">
                 <Link className="navbar__link" to="/gigs">Gigs</Link>

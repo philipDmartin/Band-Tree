@@ -14,7 +14,7 @@ export default props => {
     const handleControlledInputChange = (event) => {
         const newGig = Object.assign({}, theGig)
         newGig[event.target.name] = event.target.value
-        
+
         setGigs(newGig)
     }
     const setDefaults = () => {  
