@@ -2,6 +2,7 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 
 import { UserProvider } from './users/UserProvider'
+import Users from './users/Users.css'
 
 import { GigProvider } from './gig/GigProvider'
 import GigForm from './gig/GigForm'
@@ -18,7 +19,7 @@ import SongList from './song/SongList'
 
 import { BandProvider } from './band/BandProvider'
 import BandList from './band/BandList'
-import Users from './users/Users.css'
+// import BandDetails from "./band/BandDetails"
 
 export default props => {
   return (
@@ -32,6 +33,9 @@ export default props => {
                 <Route path='/bands'>
                   <BandList />
                 </Route>
+                {/* <Route path="/bands/:userId(\d+)" render={
+                    props => <BandDetails {...props} />
+                } /> */}
 
                 <Route
                   exact
