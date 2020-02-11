@@ -1,9 +1,11 @@
+//importing providers to send over data, react methods to use state and effect
 import React, { useContext, useState, useEffect } from "react"
 import { GigContext } from "./GigProvider"
 import { BandContext } from "../band/BandProvider"
 import {UserContext} from "../users/UserProvider"
 
 export default props => {
+//creating functions to define naming and data 
     const { addGig, theGigs, updateGig } = useContext(GigContext)
     const { theBands } = useContext(BandContext)
     const { user } = useContext(UserContext)

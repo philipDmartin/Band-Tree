@@ -44,8 +44,8 @@ const Login = props => {
                         body: JSON.stringify({
                             email: email.current.value,
                             password: password.current.value,
-                            instrumentId: instrumentId.current.value,
-                            bandId: bandId.current.value
+                            instrumentId: parseInt(instrumentId.current.value),
+                            bandId: parseInt(bandId.current.value)
                         })
                     })
                         .then(_ => _.json())
@@ -113,7 +113,8 @@ const Login = props => {
                             id="email"
                             className="form-control"
                             placeholder="Email address"
-                            required autoFocus />
+                            required 
+                            autoFocus />
                     </fieldset>
                     <fieldset>
                         <label htmlFor="inputPassword"> Password </label>

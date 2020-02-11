@@ -10,7 +10,7 @@ import { BandContext } from '../band/BandProvider'
 
   const name = useRef()
   const email = useRef()
-  const username = useRef()
+  // const username = useRef()
   const password = useRef()
   const verifyPassword = useRef()
   const instrumentId = useRef()
@@ -39,11 +39,11 @@ import { BandContext } from '../band/BandProvider'
           },
           body: JSON.stringify({
             email: email.current.value,
-            username: username.current.value,
+            // username: username.current.value,
             password: password.current.value,
             name: `${name.current.value}`,
-            instrumentId: instrumentId.current.value,
-            bandId: bandId.current.value
+            instrumentId: parseInt(instrumentId.current.value),
+            bandId: parseInt(bandId.current.value)
           })
         })
           .then(_ => _.json())
@@ -132,7 +132,7 @@ import { BandContext } from '../band/BandProvider'
             required
           />
         </fieldset>
-        <fieldset>
+        {/* <fieldset>
           <label htmlFor='username'> Username </label>
           <input
             ref={username}
@@ -142,7 +142,7 @@ import { BandContext } from '../band/BandProvider'
             placeholder='Username'
             required
           />
-        </fieldset>
+        </fieldset> */}
         <fieldset>
           <label htmlFor='inputPassword'> Password </label>
           <input
