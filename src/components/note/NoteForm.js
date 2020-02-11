@@ -1,8 +1,12 @@
 import React, { useContext, useState, useEffect } from "react"
 import { NoteContext } from "./NoteProvider"
+import { BandContext } from "../band/BandProvider"
+import {UserContext} from "../users/UserProvider"
 
 export default props => {
     const { addNote, theNotes, updateNote } = useContext(NoteContext)
+    const { theBands } = useContext(BandContext)
+    const { user } = useContext(UserContext)
     const [theNote, setNotes] = useState({})
 
     const editMode = props.match.params.hasOwnProperty("noteId")
@@ -32,12 +36,15 @@ export default props => {
 
     const constructNewNote = () => {
         const noteId = parseInt(theNote.noteId)
+        const currentUser = parseInt(localStorage.getItem("currentUser"))
+        const currentGigUserObject = user.find(u => u.id === currentUser)
+        const currentBand = currentGigUserObject.bandId
             if (editMode) {
                
                 updateNote({
                     id: theNote.id,
                     note: theNote.note,
-                    bandId: parseInt(localStorage.getItem("bandtree__user"))
+                    bandId: currentBand
                 })
                     .then(() => props.history.push("/notes"))
             } else {
@@ -45,7 +52,7 @@ export default props => {
                 addNote({
                   id: theNote.id,
                   note: theNote.note,
-                  bandId: parseInt(localStorage.getItem("bandtree__user"))
+                  bandId: currentBand
 
                 })
                     .then(() => props.history.push("/notes"))

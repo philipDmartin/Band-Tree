@@ -1,8 +1,12 @@
 import React, { useContext, useState, useEffect } from "react"
 import { GigContext } from "./GigProvider"
+import { BandContext } from "../band/BandProvider"
+import {UserContext} from "../users/UserProvider"
 
 export default props => {
     const { addGig, theGigs, updateGig } = useContext(GigContext)
+    const { theBands } = useContext(BandContext)
+    const { user } = useContext(UserContext)
     const [theGig, setGigs] = useState({})
 
     const editMode = props.match.params.hasOwnProperty("gigId")
@@ -10,7 +14,7 @@ export default props => {
     const handleControlledInputChange = (event) => {
         const newGig = Object.assign({}, theGig)
         newGig[event.target.name] = event.target.value
-        
+
         setGigs(newGig)
     }
     const setDefaults = () => {  
@@ -29,9 +33,12 @@ export default props => {
     useEffect(() => {
         setDefaults()
     }, [theGigs])
-
     const constructNewGig = () => {
         const gigId = parseInt(theGig.gigId)
+        const currentUser = parseInt(localStorage.getItem("currentUser"))
+        const currentGigUserObject = user.find(u => u.id === currentUser)
+        const currentBand = currentGigUserObject.bandId
+        
             if (editMode) {
                
                 updateGig({
@@ -39,7 +46,7 @@ export default props => {
                     venue: theGig.venue,
                     date: theGig.date,
                     time: theGig.time,
-                    bandId: parseInt(localStorage.getItem("bandtree__user"))
+                    bandId: currentBand
                 })
                     .then(() => props.history.push("/gigs"))
             } else {
@@ -49,8 +56,7 @@ export default props => {
                     venue: theGig.venue,
                     date: theGig.date,
                     time: theGig.time,
-                    bandId: parseInt(localStorage.getItem("bandtree__user"))
-
+                    bandId: currentBand                   
                 })
                     .then(() => props.history.push("/gigs"))
             }
