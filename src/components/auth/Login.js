@@ -12,7 +12,7 @@ const Login = props => {
     const password = useRef()
     const instrumentId = useRef()
     const bandId = useRef()
-
+  
     const existingUserCheck = () => {
         return fetch(`http://localhost:8088/users?email=${email.current.value}`)
             .then(_ => _.json())
@@ -23,7 +23,7 @@ const Login = props => {
                 return false
             })
     }   
-
+ 
     const handleLogin = (e) => {
         e.preventDefault()
 
@@ -31,7 +31,6 @@ const Login = props => {
             .then(exists => {
                 if (exists && exists.password === password.current.value) {
                     localStorage.setItem("currentUser", exists.id)
-                    // sessionStorage.setItem("currentSessionUser", exists.id)
                     props.history.push("/")
                 } else if (exists && exists.password !== password.current.value) {
                     window.alert("Password does not match")
@@ -46,7 +45,7 @@ const Login = props => {
                             password: password.current.value,
                             instrumentId: parseInt(instrumentId.current.value),
                             bandId: parseInt(bandId.current.value)
-                        })
+                        }) 
                     })
                         .then(_ => _.json())
                         .then(response => {

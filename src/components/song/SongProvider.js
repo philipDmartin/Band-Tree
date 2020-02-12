@@ -45,11 +45,6 @@ export const SongProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log(theSongs)
-        console.log("songs app state changed")
-        // if (checkedMessages.length == messages.length){
-        //     console.log("time to get messages")
-        // }
     }, [theSongs])
       
     return (

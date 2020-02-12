@@ -45,11 +45,6 @@ export const NoteProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log(theNotes)
-        console.log("notes app state changed")
-        // if (checkedMessages.length == messages.length){
-        //     console.log("time to get messages")
-        // }
     }, [theNotes])
 
     return (

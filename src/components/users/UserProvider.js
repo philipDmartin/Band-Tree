@@ -29,8 +29,6 @@ export const UserProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log("****  USER APPLICATION STATE CHANGED  ****")
-        console.log(user)
     }, [user])
 
     return (

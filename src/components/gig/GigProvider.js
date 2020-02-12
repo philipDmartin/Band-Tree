@@ -45,11 +45,6 @@ export const GigProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log(theGigs)
-        console.log("gigs app state changed")
-        // if (checkedMessages.length == messages.length){
-        //     console.log("time to get messages")
-        // }
     }, [theGigs])
 
     return (

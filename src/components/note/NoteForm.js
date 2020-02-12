@@ -21,13 +21,10 @@ export default props => {
         if (editMode) {
             const noteId = parseInt(props.match.params.noteId)
             const selectedNote = theNotes.find(n => n.id === noteId) || {}
-            console.log(selectedNote, "notes here")
             setNotes(selectedNote)
         }
     }
   useEffect(() => {
-    console.log(theNote, "note")
-
   }, [theNote])
 
     useEffect(() => {
@@ -59,7 +56,6 @@ export default props => {
             }
         }
     
-
      return (
     <form className='eventForm'>
       <h2 className='NoteForm__note'>

@@ -21,13 +21,10 @@ export default props => {
         if (editMode) {
             const songId = parseInt(props.match.params.songId)
             const selectedSong = theSongs.find(s => s.id === songId) || {}
-            console.log(selectedSong, "songs here")
             setSongs(selectedSong)
         }
     }
   useEffect(() => {
-    console.log(theSong, "song")
-
   }, [theSong])
 
     useEffect(() => {

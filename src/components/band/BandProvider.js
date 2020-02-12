@@ -45,11 +45,6 @@ export const BandProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log(theBands)
-        console.log("bands app state changed")
-        // if (checkedMessages.length == messages.length){
-        //     console.log("time to get messages")
-        // }
     }, [theBands])
       
     return (

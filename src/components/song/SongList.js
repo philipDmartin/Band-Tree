@@ -9,9 +9,7 @@ export default (props) => {
     const { theSongs } = useContext(SongContext)
     const theCurrentUser = user.find(u => u.id === parseInt (localStorage.getItem("currentUser"))) || {}
     const theCurrentSongs = theSongs.filter(s => s.bandId === theCurrentUser.bandId)
-console.log(theCurrentSongs)
-    
-console.log(theSongs)
+
     return (
         <div className="songs">
             <h1>Set Lists</h1>

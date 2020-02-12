@@ -23,13 +23,10 @@ export default props => {
         if (editMode) {
             const gigId = parseInt(props.match.params.gigId)
             const selectedGig = theGigs.find(g => g.id === gigId) || {}
-            console.log(selectedGig, "gigs here")
             setGigs(selectedGig)
         }
     } 
   useEffect(() => {
-    console.log(theGig, "gig")
-
   }, [theGig])
 
     useEffect(() => {

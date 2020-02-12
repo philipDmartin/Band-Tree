@@ -9,8 +9,7 @@ export default (props) => {
     const { theGigs } = useContext(GigContext)
     const theCurrentUser = user.find(u => u.id === parseInt (localStorage.getItem("currentUser"))) || {}
     const theCurrentGigs = theGigs.filter(g => g.bandId === theCurrentUser.bandId)
-console.log(theCurrentGigs)
-console.log(theGigs)
+
     return (
         <div className="gigs">
             <h1>Gigs</h1>
