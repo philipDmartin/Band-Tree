@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 
 export const BandContext = React.createContext()
 
+//write a function to fetch all band data
 export const BandProvider = (props) => {
     const [theBands, setBands] = useState([])
 
@@ -40,18 +41,15 @@ export const BandProvider = (props) => {
             .then(getBands)
     }
 
+//define useEffect for other component
     useEffect(() => {
         getBands()
     }, [])
 
     useEffect(() => {
-        console.log(theBands)
-        console.log("bands app state changed")
-        // if (checkedMessages.length == messages.length){
-        //     console.log("time to get messages")
-        // }
     }, [theBands])
-      
+
+//return all fetch call methods
     return (
         <BandContext.Provider value={{
             theBands, addBand, deleteBand, updateBand

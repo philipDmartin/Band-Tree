@@ -44,6 +44,8 @@ fieldset {
 
 .container--login {
     text-align: center;
+    /* color: rgb(214, 214, 0); */
+    /* background-color: rgb(34, 34, 34); */
 }
 
 .form--login {
@@ -55,3 +57,5 @@ fieldset {
     background-blend-mode: overlay;
     background-repeat: no-repeat;
 }
+
+   

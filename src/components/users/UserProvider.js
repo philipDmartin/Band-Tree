@@ -6,7 +6,7 @@ export const UserProvider = (props) => {
     const [user, setUsers] = useState([])
 
     const getUsers = () => {
-        return fetch("http://localhost:8088/users")
+        return fetch("http://localhost:8088/users?_expand=band&_expand=instrument")
             .then(res => res.json())
             .then(parsedUsers => {
                 setUsers(parsedUsers)
@@ -29,8 +29,6 @@ export const UserProvider = (props) => {
     }, [])
 
     useEffect(() => {
-        console.log("****  USER APPLICATION STATE CHANGED  ****")
-        console.log(user)
     }, [user])
 
     return (

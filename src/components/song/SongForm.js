@@ -1,11 +1,9 @@
 import React, { useContext, useState, useEffect } from "react"
 import { SongContext } from "./SongProvider"
-import { BandContext } from "../band/BandProvider"
 import {UserContext} from "../users/UserProvider"
 
 export default props => {
     const { addSong, theSongs, updateSong } = useContext(SongContext)
-    const { theBands } = useContext(BandContext)
     const { user } = useContext(UserContext)
     const [theSong, setSongs] = useState({})
 
@@ -21,13 +19,10 @@ export default props => {
         if (editMode) {
             const songId = parseInt(props.match.params.songId)
             const selectedSong = theSongs.find(s => s.id === songId) || {}
-            console.log(selectedSong, "songs here")
             setSongs(selectedSong)
         }
     }
   useEffect(() => {
-    console.log(theSong, "song")
-
   }, [theSong])
 
     useEffect(() => {

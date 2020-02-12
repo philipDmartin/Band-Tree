@@ -2,14 +2,13 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 
 import { UserProvider } from './users/UserProvider'
-import Users from './users/Users.css'
+import './users/Users.css'
 
 import { GigProvider } from './gig/GigProvider'
 import GigForm from './gig/GigForm'
 import GigList from './gig/GigList'
 
 import { NoteProvider } from './note/NoteProvider'
-import NoteDetails from './note/NoteDetails'
 import NoteForm from './note/NoteForm'
 import NoteList from './note/NoteList'
 
@@ -68,9 +67,6 @@ export default props => {
                   path='/notes/edit/:noteId(\d+)'
                   render={props => <NoteForm {...props} />}
                 />
-                {/* <Route path="/notes/:ntoeId(\d+)" render={
-                            props => <NoteDetails {...props} />
-                        } /> */}
 
                 <Route
                   exact

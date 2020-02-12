@@ -9,8 +9,7 @@ export default (props) => {
     const { theNotes } = useContext(NoteContext)
     const theCurrentUser = user.find(u => u.id === parseInt (localStorage.getItem("currentUser"))) || {}
     const theCurrentNotes = theNotes.filter(n => n.bandId === theCurrentUser.bandId)
-console.log(theCurrentNotes)
-console.log(theNotes)
+
     return (
         <div className="notes">
             <h1>Notes</h1>

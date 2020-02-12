@@ -5,13 +5,13 @@ import "./Songs.css"
 // import { Link } from "react-router-dom"
 
 export default ({song, match, history}) => {
-    const { theSong, deleteSong } = useContext(SongContext)
+    const { deleteSong } = useContext(SongContext)
 
     return (
     <section className="song">
          <div className="song__title">{song.title}</div>
          <div className="song__key">{song.key}</div>
-         <div className="song__band">{song.bandId}</div>
+         {/* <div className="song__band">{song.bandId}</div> */}
 
         <button onClick={() => {
                 history.push(`/songs/edit/${song.id}`)
