@@ -5,8 +5,8 @@ import { BandContext } from '../band/BandProvider'
 
 //write a function to declare refrence names
   const Register = props => {
-  const { theBands, updateBand } = useContext(BandContext)
-  const { theInstruments, updateInstrument } = useContext(InstrumentContext)
+  const { theBands } = useContext(BandContext)
+  const { theInstruments } = useContext(InstrumentContext)
 
   const name = useRef()
   const email = useRef()
