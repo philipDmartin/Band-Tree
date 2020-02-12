@@ -1,11 +1,9 @@
 import React, { useContext, useState, useEffect } from "react"
 import { NoteContext } from "./NoteProvider"
-import { BandContext } from "../band/BandProvider"
 import {UserContext} from "../users/UserProvider"
 
 export default props => {
     const { addNote, theNotes, updateNote } = useContext(NoteContext)
-    const { theBands } = useContext(BandContext)
     const { user } = useContext(UserContext)
     const [theNote, setNotes] = useState({})
 

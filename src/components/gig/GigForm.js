@@ -1,24 +1,24 @@
 //importing providers to send over data, react methods to use state and effect
 import React, { useContext, useState, useEffect } from "react"
 import { GigContext } from "./GigProvider"
-import { BandContext } from "../band/BandProvider"
 import {UserContext} from "../users/UserProvider"
 
+//define state and context names
 export default props => {
-//creating functions to define naming and data 
     const { addGig, theGigs, updateGig } = useContext(GigContext)
-    const { theBands } = useContext(BandContext)
     const { user } = useContext(UserContext)
     const [theGig, setGigs] = useState({})
-
+ 
     const editMode = props.match.params.hasOwnProperty("gigId")
 
+//track change when user types in inputfield
     const handleControlledInputChange = (event) => {
         const newGig = Object.assign({}, theGig)
         newGig[event.target.name] = event.target.value
 
         setGigs(newGig)
     }
+//
     const setDefaults = () => {  
         if (editMode) {
             const gigId = parseInt(props.match.params.gigId)
@@ -32,6 +32,7 @@ export default props => {
     useEffect(() => {
         setDefaults()
     }, [theGigs])
+
     const constructNewGig = () => {
         const gigId = parseInt(theGig.gigId)
         const currentUser = parseInt(localStorage.getItem("currentUser"))
@@ -73,7 +74,6 @@ export default props => {
                     type="text"
                     id="venue"
                     name='venue'
-                    // ref={venues}
                     defaultValue={theGig.venue}
                     required
                     autoFocus

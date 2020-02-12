@@ -3,19 +3,19 @@ import './Logins.css'
 import { InstrumentContext } from '../instrument/InstrumentProvider'
 import { BandContext } from '../band/BandProvider'
 
+//write a function to declare refrence names
   const Register = props => {
-  
   const { theBands, updateBand } = useContext(BandContext)
   const { theInstruments, updateInstrument } = useContext(InstrumentContext)
 
   const name = useRef()
   const email = useRef()
-  // const username = useRef()
   const password = useRef()
   const verifyPassword = useRef()
   const instrumentId = useRef()
   const bandId = useRef()
 
+//fetch the users array and get there currrent value of the email object
   const existingUserCheck = () => {
     return fetch(`http://localhost:8088/users?email=${email.current.value}`)
       .then(_ => _.json())
@@ -30,6 +30,7 @@ import { BandContext } from '../band/BandProvider'
   const handleRegister = e => {
     e.preventDefault()
 
+//require password create and password verification
     if (password.current.value === verifyPassword.current.value) {
       existingUserCheck().then(() => {
         fetch('http://localhost:8088/users', {
@@ -37,15 +38,17 @@ import { BandContext } from '../band/BandProvider'
           headers: {
             'Content-Type': 'application/json'
           },
+
+//save the users objects as a string and get the Id integers 
           body: JSON.stringify({
             email: email.current.value,
-            // username: username.current.value,
             password: password.current.value,
             name: `${name.current.value}`,
             instrumentId: parseInt(instrumentId.current.value),
             bandId: parseInt(bandId.current.value)
           })
         })
+//track users local storage
           .then(_ => _.json())
           .then(createdUser => {
             if (createdUser.hasOwnProperty('id')) {
@@ -59,6 +62,7 @@ import { BandContext } from '../band/BandProvider'
     }
   }
 
+//return a form for the user to register there information
   return (
     <main style={{ textAlign: 'center' }}>
       <form className='form--login' onSubmit={handleRegister}>
@@ -132,17 +136,6 @@ import { BandContext } from '../band/BandProvider'
             required
           />
         </fieldset>
-        {/* <fieldset>
-          <label htmlFor='username'> Username </label>
-          <input
-            ref={username}
-            type='username'
-            name='username'
-            className='form-control'
-            placeholder='Username'
-            required
-          />
-        </fieldset> */}
         <fieldset>
           <label htmlFor='inputPassword'> Password </label>
           <input

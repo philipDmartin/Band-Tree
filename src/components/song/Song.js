@@ -5,7 +5,7 @@ import "./Songs.css"
 // import { Link } from "react-router-dom"
 
 export default ({song, match, history}) => {
-    const { theSong, deleteSong } = useContext(SongContext)
+    const { deleteSong } = useContext(SongContext)
 
     return (
     <section className="song">
