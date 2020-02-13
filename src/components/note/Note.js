@@ -2,9 +2,11 @@ import React, { useContext } from 'react'
 import { NoteContext } from './NoteProvider'
 import './Notes.css'
 
+//define props and context
 export default ({ note, match, history }) => {
   const { deleteNote } = useContext(NoteContext)
 
+  //define user and get there objects
   return (
     <section className='note'>
       <div className='note__note'>{note.note}</div>

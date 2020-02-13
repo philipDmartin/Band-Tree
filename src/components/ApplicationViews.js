@@ -18,7 +18,6 @@ import SongList from './song/SongList'
 
 import { BandProvider } from './band/BandProvider'
 import BandList from './band/BandList'
-// import BandDetails from "./band/BandDetails"
 
 export default props => {
   return (
@@ -28,13 +27,9 @@ export default props => {
           <NoteProvider>
             <BandProvider>
               <GigProvider>
-                
                 <Route path='/bands'>
                   <BandList />
                 </Route>
-                {/* <Route path="/bands/:userId(\d+)" render={
-                    props => <BandDetails {...props} />
-                } /> */}
 
                 <Route
                   exact
