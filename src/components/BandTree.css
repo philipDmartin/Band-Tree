@@ -37,3 +37,7 @@ strong {
 address {
   margin: 0 0 1.5em;
 }
+
+.Pic{
+  background-image: url("CapLogo.png");
+}

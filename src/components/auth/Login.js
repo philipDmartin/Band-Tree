@@ -43,7 +43,6 @@ const Login = props => {
     <main className='container--login'>
       <section>
         <form className='form--login' onSubmit={handleLogin}>
-          <section className='logo'></section>
           <h1>Band Tree</h1>
 
           <fieldset>

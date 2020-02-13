@@ -44,10 +44,6 @@ fieldset {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-/* .setOpacity{
-    background-color: rgba(255, 255, 255, 0.5);
-} */
-
 .container--login {
   text-align: center;
   background-image: url('https://www.itl.cat/pics/b/3/38522_band-instruments-wallpaper.jpg');
@@ -70,6 +66,4 @@ fieldset {
   background-repeat: no-repeat;
 }
 
-.logo {
-  background-image: url('./BandTree.png');
-}
+
