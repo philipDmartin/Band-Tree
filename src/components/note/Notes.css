@@ -1,14 +1,17 @@
 .noteList {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
+  height: 1000px;
 }
 .note {
   flex-basis: 33%;
   margin: 1em;
   padding: 1em;
   border: 1px solid goldenrod;
+  width: 400px;
+
 }
 fieldset {
   margin: 0.5rem 0;
@@ -18,4 +21,14 @@ fieldset {
 .note__sender {
   font-size: larger;
   color: darkred;
+}
+
+.note__note{
+  height: 250px;
+
+}
+
+.notes{
+  margin-left: auto;
+  margin-right: auto;
 }

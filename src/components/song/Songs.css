@@ -6,9 +6,12 @@
 }
 .song {
   flex-basis: 33%;
-  margin: 1em;
+  /* margin: 1em; */
   padding: 1em;
   border: 1px solid goldenrod;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 fieldset {
   margin: 0.5rem 0;

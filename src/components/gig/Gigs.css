@@ -1,8 +1,9 @@
 .gigList {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
+  height: 1000px;
 }
 .gig {
   flex-basis: 33%;
