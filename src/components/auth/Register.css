@@ -1,0 +1,11 @@
+.registerImage {
+  text-align: center;
+  background-image: url('https://www.itl.cat/pics/b/3/38516_band-instruments-wallpaper.jpg');
+
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  color: rgba(255, 255, 255, 0.863);
+}

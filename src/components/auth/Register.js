@@ -1,10 +1,10 @@
 import React, { useContext, useRef } from 'react'
-import './Logins.css'
+import './Register.css'
 import { InstrumentContext } from '../instrument/InstrumentProvider'
 import { BandContext } from '../band/BandProvider'
 
 //write a function to declare refrence names
-  const Register = props => {
+const Register = props => {
   const { theBands } = useContext(BandContext)
   const { theInstruments } = useContext(InstrumentContext)
 
@@ -15,7 +15,7 @@ import { BandContext } from '../band/BandProvider'
   const instrumentId = useRef()
   const bandId = useRef()
 
-//fetch the users array and get there currrent value of the email object
+  //fetch the users array and get there currrent value of the email object
   const existingUserCheck = () => {
     return fetch(`http://localhost:8088/users?email=${email.current.value}`)
       .then(_ => _.json())
@@ -30,7 +30,7 @@ import { BandContext } from '../band/BandProvider'
   const handleRegister = e => {
     e.preventDefault()
 
-//require password create and password verification
+    //require password create and password verification
     if (password.current.value === verifyPassword.current.value) {
       existingUserCheck().then(() => {
         fetch('http://localhost:8088/users', {
@@ -39,7 +39,7 @@ import { BandContext } from '../band/BandProvider'
             'Content-Type': 'application/json'
           },
 
-//save the users objects as a string and get the Id integers 
+          //save the users objects as a string and get the Id integers
           body: JSON.stringify({
             email: email.current.value,
             password: password.current.value,
@@ -48,7 +48,7 @@ import { BandContext } from '../band/BandProvider'
             bandId: parseInt(bandId.current.value)
           })
         })
-//track users local storage
+          //track users local storage
           .then(_ => _.json())
           .then(createdUser => {
             if (createdUser.hasOwnProperty('id')) {
@@ -62,9 +62,9 @@ import { BandContext } from '../band/BandProvider'
     }
   }
 
-//return a form for the user to register there information
+  //return a form for the user to register there information
   return (
-    <main style={{ textAlign: 'center' }}>
+    <main style={{ textAlign: 'center' }} className='registerImage'>
       <form className='form--login' onSubmit={handleRegister}>
         <h1 className='h3 mb-3 font-weight-normal'>
           Register to use Band Tree

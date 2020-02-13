@@ -34,7 +34,7 @@ const Login = props => {
         props.history.push('/')
       } else if (exists && exists.password !== password.current.value) {
         window.alert('Password does not match')
-      } 
+      }
     })
   }
 
@@ -43,9 +43,9 @@ const Login = props => {
     <main className='container--login'>
       <section>
         <form className='form--login' onSubmit={handleLogin}>
+          <section className='logo'></section>
           <h1>Band Tree</h1>
-          <h2>Please sign in</h2>
-          <section></section>
+
           <fieldset>
             <div className='form-group'>
               <label htmlFor='instrumentId'>Select instrument: </label>
@@ -94,7 +94,7 @@ const Login = props => {
             />
           </fieldset>
           <fieldset>
-            <button type='submit'>Sign in</button>
+            <button type='submit'>Lets Rock</button>
           </fieldset>
         </form>
       </section>
