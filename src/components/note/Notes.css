@@ -4,6 +4,7 @@
   flex-direction: row;
   justify-content: space-between;
   height: 1000px;
+
 }
 .note {
   flex-basis: 33%;
@@ -25,10 +26,13 @@ fieldset {
 
 .note__note{
   height: 250px;
+  color: rgb(255, 255, 255);
 
 }
 
 .notes{
   margin-left: auto;
   margin-right: auto;
+  background-color: rgba(63, 63, 63, 0.692);
+
 }

@@ -10,6 +10,7 @@
   margin: 1em;
   padding: 1em;
   border: 1px solid goldenrod;
+  color: white;
 }
 fieldset {
   margin: 0.5rem 0;
@@ -19,4 +20,9 @@ fieldset {
 .gig__sender {
   font-size: larger;
   color: darkred;
+}
+
+.gigs{
+  background-color: rgba(63, 63, 63, 0.692);
+
 }

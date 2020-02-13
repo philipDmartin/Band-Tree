@@ -2,6 +2,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color: rgba(63, 63, 63, 0.692);
+  color: white;
+  
 }
 
 .user {

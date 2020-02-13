@@ -12,6 +12,7 @@
   width: 600px;
   margin-left: auto;
   margin-right: auto;
+  color: white;
 }
 fieldset {
   margin: 0.5rem 0;
@@ -21,4 +22,9 @@ fieldset {
 .song__sender {
   font-size: larger;
   color: darkred;
+}
+
+.songs{
+  background-color: rgba(63, 63, 63, 0.692);
+
 }
