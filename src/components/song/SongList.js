@@ -17,7 +17,7 @@ export default props => {
   return (
     
     <div className='songs'>
-      <h1>Set Lists</h1>
+      <h1 className="title">Set Lists</h1>
       <button onClick={() => props.history.push('/songs/create')}>
         Add Song
       </button>

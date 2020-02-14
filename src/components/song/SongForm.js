@@ -57,7 +57,7 @@ export default props => {
 
   return (
     <form className='eventForm'>
-      <h2 className='SongForm__Song'>
+      <h2 className='admit'>
         {editMode ? 'Update Song' : 'Admit Song'}
       </h2>
       <div className='form-group'>

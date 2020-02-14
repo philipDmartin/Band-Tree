@@ -15,7 +15,7 @@ export default props => {
   return (
     //map through gigs array
     <div className='gigs'>
-      <h1>Gigs</h1>
+      <h1 className="title">Gigs</h1>
       <button onClick={() => props.history.push('/gigs/create')}>
         Add Gig
       </button>

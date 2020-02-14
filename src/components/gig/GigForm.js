@@ -60,7 +60,7 @@ export default props => {
 
   return (
     <form className='eventForm'>
-      <h2 className='GigForm__Gig'>{editMode ? 'Update Gig' : 'Admit Gig'}</h2>
+      <h2 className='admit'>{editMode ? 'Update Gig' : 'Admit Gig'}</h2>
 
       <div className='form-group'>
         <label htmlFor='venue'>Venue</label>
