@@ -13,13 +13,13 @@ export default props => {
   const theCurrentGigs = theGigs.filter(g => g.bandId === theCurrentUser.bandId)
 
   return (
+    //map through gigs array
     <div className='gigs'>
-      <h1>Gigs</h1>
+      <h1 className="title">Gigs</h1>
       <button onClick={() => props.history.push('/gigs/create')}>
         Add Gig
       </button>
       <article className='gigList'>
-        //map through gigs array
         {theCurrentGigs.map(gig => (
           <Gig key={gig} gig={gig} {...props} />
         ))}

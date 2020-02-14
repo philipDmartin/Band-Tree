@@ -27,7 +27,12 @@ export default props => {
           <NoteProvider>
             <BandProvider>
               <GigProvider>
-                <Route path='/bands'>
+
+                <Route exact path='/'>
+                  <BandList />
+                </Route>
+                
+                <Route exact path='/bands'>
                   <BandList />
                 </Route>
 
@@ -77,6 +82,7 @@ export default props => {
                   path='/songs/edit/:songId(\d+)'
                   render={props => <SongForm {...props} />}
                 />
+
               </GigProvider>
             </BandProvider>
           </NoteProvider>

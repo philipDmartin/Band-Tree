@@ -11,6 +11,7 @@ import { BandProvider } from './band/BandProvider'
 
 export default () => (
   <>
+  <section className="Pic"></section>
     <Route
       render={() => {
         if (localStorage.getItem('currentUser')) {

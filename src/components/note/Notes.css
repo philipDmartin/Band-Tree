@@ -1,14 +1,18 @@
 .noteList {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
+  height: 1000px;
+
 }
 .note {
   flex-basis: 33%;
   margin: 1em;
   padding: 1em;
-  border: 1px solid goldenrod;
+  /* border: 1px solid rgb(0, 0, 0); */
+  width: 400px;
+  background-color: rgb(83, 119, 121);
 }
 fieldset {
   margin: 0.5rem 0;
@@ -18,4 +22,21 @@ fieldset {
 .note__sender {
   font-size: larger;
   color: darkred;
+}
+
+.note__note{
+  height: 250px;
+  color: rgb(255, 255, 255);
+
+}
+
+.notes{
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(63, 63, 63, 0.692);
+
+}
+
+.killMe{
+  color: rgb(10, 74, 129);
 }

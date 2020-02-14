@@ -46,7 +46,7 @@ export default props => {
       }).then(() => props.history.push('/notes'))
     } else {
       addNote({
-        id: theNote.id,
+        id: theNote.id, 
         note: theNote.note,
         bandId: currentBand
       }).then(() => props.history.push('/notes'))
@@ -55,7 +55,7 @@ export default props => {
 
   return (
     <form className='eventForm'>
-      <h2 className='NoteForm__note'>
+      <h2 className="killMe">
         {editMode ? 'Update Note' : 'Admit Note'}
       </h2>
 

@@ -11,7 +11,10 @@ export default () => {
 
   //map through the current user and return there Id and bandId
   return (
+    
     <div className='users'>
+        <h1 className="title">Your Tree</h1>
+
       {theCurrentUsers.map(use => (
         <Band key={use.id} user={use} />
       ))}

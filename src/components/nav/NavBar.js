@@ -39,6 +39,7 @@ export default props => {
           >
             Logout
           </Link>
+
         </li>
       ) : (
         ''
