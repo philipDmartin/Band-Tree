@@ -12,7 +12,7 @@ export default ({ song, match, history }) => {
       <div className='song__title'>{song.title}</div>
       <div className='song__key'>{song.key}</div>
 
-      <button className="edit"
+      <button className="edit" className="button"
         onClick={() => {
           history.push(`/songs/edit/${song.id}`)
         }}
