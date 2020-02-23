@@ -11,10 +11,12 @@
   margin: 1em;
   padding: 1em;
   /* border: 1px solid rgb(0, 0, 0); */
-  width: 400px;
+  
   background-color: rgb(83, 119, 121);
   font-family: sans-serif;
   border-radius: 15%;
+  height: 100px;
+  width: 3px;
 }
 fieldset {
   margin: 0.5rem 0;
@@ -27,9 +29,8 @@ fieldset {
 }
 
 .note__note{
-  height: 250px;
+  height: 50px;
   color: rgb(255, 255, 255);
-
 }
 
 .notes{
