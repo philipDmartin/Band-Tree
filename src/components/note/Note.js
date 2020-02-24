@@ -11,7 +11,7 @@ export default ({ note, match, history }) => {
     <section className='note'>
       <div className='note__note'>{note.note}</div>
 
-      <button
+      <button className="button"
         onClick={() => {
           history.push(`/notes/edit/${note.id}`)
         }}

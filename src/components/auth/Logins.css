@@ -1,6 +1,7 @@
 .h1,
 h1 {
   font-size: 2.5rem;
+  font-family: sans-serif;
 }
 
 fieldset {
@@ -35,19 +36,18 @@ fieldset {
   font-weight: 400;
   line-height: 1.5;
   color: #495057c2;
-  background-color: rgba(255, 255, 255, 0.514);
+  background-color: rgba(255, 255, 255, 0.699);
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   -webkit-transition: border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-  
+
 .container--login {
   text-align: center;
   background-image: url('https://www.itl.cat/pics/b/3/38522_band-instruments-wallpaper.jpg');
-
   width: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
@@ -57,13 +57,16 @@ fieldset {
 }
 
 .form--login {
+  justify-content: center;
   background-position-x: right;
   z-index: 1;
-  min-height: 25rem;
-  min-width: 45rem;
+  height: 25%;
+  width: 45%;
   background-color: hsla(0, 0%, 100%, 0.4, 0);
   background-blend-mode: overlay;
   background-repeat: no-repeat;
 }
 
-
+.band {
+  color: rgb(105, 105, 187);
+}

@@ -43,33 +43,8 @@ const Login = props => {
     <main className='container--login'>
       <section>
         <form className='form--login' onSubmit={handleLogin}>
-          <h1>Band Tree</h1>
-
-          <fieldset>
-            <div className='form-group'>
-              <label htmlFor='instrumentId'>Select instrument: </label>
-              <select
-                defaultValue='instrumentId'
-                name='instrumentId'
-                ref={instrumentId}
-                id='instrumentId'
-                className='form-control'
-                placeholder='instrumentId'
-                required
-                autoFocus
-
-                //map through band and instruments to find there Id
-              >
-                <option value='0'>Select a instrument</option>
-                {theInstruments.map(i => (
-                  <option key={i.id} value={i.id}>
-                    {i.instrument}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </fieldset>
-          <fieldset>
+          <h1 className="band">Band Tree</h1>
+            <fieldset>
             <label htmlFor='inputEmail'> Email address </label>
             <input
               ref={email}

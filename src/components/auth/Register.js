@@ -66,7 +66,7 @@ const Register = props => {
   return (
     <main style={{ textAlign: 'center' }} className='registerImage'>
       <form className='form--login' onSubmit={handleRegister}>
-        <h1 className='h3 mb-3 font-weight-normal'>
+        <h1 className='h3 mb-3 font-weight-normal' className="registerTitle">
           Register to use Band Tree
         </h1>
         <fieldset>
@@ -159,7 +159,7 @@ const Register = props => {
           />
         </fieldset>
         <fieldset>
-          <button type='submit'>Sign in</button>
+          <button type='submit'>Lets Rock</button>
         </fieldset>
       </form>
     </main>

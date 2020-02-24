@@ -2,13 +2,19 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: left;
-  background-color: linen;
+  background-color: rgba(12, 12, 12, 0.705);
   height: 50px;
   margin: 20px;
+  font-family: monospace;
 }
 
 .navbar__item {
   flex-basis: 20%;
   list-style-type: none;
   margin: 10px;
+  
+}
+
+.navbar__link{
+  color: rgb(98, 163, 233);
 }

@@ -22,12 +22,14 @@ h5,
 h6 {
   font-family: 'Patua One', serif;
   letter-spacing: 2px;
+
 }
 
 p {
   margin-bottom: 1.5em;
   color: #d6fcff;
   color: darkslateblue;
+  
 }
 
 strong {
@@ -42,7 +44,34 @@ address {
   text-align: center;
   background-image: url('https://www.itl.cat/pics/b/3/38522_band-instruments-wallpaper.jpg');
   width: 100vw;
+  background-color: rgb(199, 197, 197);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
-  color: rgba(255, 255, 255, 0.342);}
+  color: rgba(255, 255, 255, 0.342);
+}
+
+.button {
+  margin: 5px;
+  width: 50px;
+  border: double; 
+}
+
+.button:hover {
+  background-color: rgba(59, 59, 59, 0.815);
+  color: rgb(255, 255, 255);
+  width: 65px;
+  height: 35px; 
+}
+
+.btn--delete{
+  margin: 5px;
+  border: double; 
+}
+
+.btn--delete:hover {
+  background-color: rgba(59, 59, 59, 0.815);
+  color: rgb(255, 255, 255);
+  width: 65px;
+  height: 35px;
+}

@@ -1,25 +1,59 @@
 .users {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
-  background-color: rgba(63, 63, 63, 0.692);
   color: white;
-  
+  height: 1000px;
+
 }
 
 .user {
-  flex-basis: 28%;
+  flex-basis: 25%;
   margin: 1em;
   padding: 1em;
   border: 1px solid rgb(10, 10, 10);
-  height: 300px;
+  height: 400px;
   text-align: center;
-  background-color: rgba(83, 119, 121, 0.568);
+  background-color: rgba(5, 21, 238, 0.452);
+  border-radius: 15%;
 
 }
 
-.title{
+.title {
   padding: 30px;
+  font-family: sans-serif;
+  color: rgba(29, 29, 29, 0.609);
+  justify-content: center;
+  display: flex; 
+  align-items: center;
+  height: 1%;
 }
- 
 
+.user__name {
+  font-family: sans-serif;
+  /* padding: 30px; */
+
+}
+
+.user__ins{
+  font-family: sans-serif;
+  border: double;
+
+}
+
+.user__band{
+  font-family: sans-serif;
+  padding: 30px;
+  border: double;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.art {
+  width: 250px;
+  height: 200px;
+  background-color: rgba(241, 125, 96, 0.733);
+  border-radius: 15%;
+}
