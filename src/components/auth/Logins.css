@@ -41,14 +41,13 @@ fieldset {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
   -webkit-transition: border-color 0.15s ease-in-out,
-    box-shadow 0.15s ease-in-out;
+  box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-  
+
 .container--login {
   text-align: center;
   background-image: url('https://www.itl.cat/pics/b/3/38522_band-instruments-wallpaper.jpg');
-
   width: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
