@@ -57,10 +57,11 @@ fieldset {
 }
 
 .form--login {
+  justify-content: center;
   background-position-x: right;
   z-index: 1;
-  min-height: 25rem;
-  min-width: 45rem;
+  height: 25%;
+  width: 45%;
   background-color: hsla(0, 0%, 100%, 0.4, 0);
   background-blend-mode: overlay;
   background-repeat: no-repeat;

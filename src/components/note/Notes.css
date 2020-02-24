@@ -12,10 +12,11 @@
   padding: 1em;
   background-color: rgba(90, 103, 179, 0.74);
   font-family: sans-serif;
-  border-radius: 15%;
+  border-radius: 40%;
   height: 100px;
   width: 3px;
 }
+
 fieldset {
   margin: 0.5rem 0;
   padding: 0.5rem;
